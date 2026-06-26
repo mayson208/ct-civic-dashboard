@@ -11,8 +11,10 @@ import ProjectTrackerPage from './pages/ProjectTrackerPage'
 import AboutPage from './pages/AboutPage'
 import EconomicPage from './pages/EconomicPage'
 import ExecutiveSummaryPage from './pages/ExecutiveSummaryPage'
+import HousingPage from './pages/HousingPage'
+import AlertsPage from './pages/AlertsPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -26,6 +28,8 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'projects',    label: 'IT Projects',     icon: '📋',  description: 'CT state IT project portfolio tracker' },
   { id: 'economy',     label: 'Economy',         icon: '💹',  description: 'GDP, employment by sector, business formation, county breakdown' },
   { id: 'executive',   label: 'Exec Summary',    icon: '🖨',  description: 'Printable cross-domain executive briefing with recommendations' },
+  { id: 'housing',     label: 'Housing',         icon: '🏘',  description: 'Home prices, permits, affordability, rental rates, and affordable stock' },
+  { id: 'alerts',      label: 'Alerts',          icon: '🔔',  description: 'Automated threshold monitoring and governance alerts' },
   { id: 'about',       label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -98,6 +102,8 @@ export default function App() {
         {activeTab === 'projects'   && <ProjectTrackerPage />}
         {activeTab === 'economy'    && <EconomicPage />}
         {activeTab === 'executive'  && <ExecutiveSummaryPage />}
+        {activeTab === 'housing'    && <HousingPage />}
+        {activeTab === 'alerts'     && <AlertsPage />}
         {activeTab === 'about'      && <AboutPage />}
       </main>
 
