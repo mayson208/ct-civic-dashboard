@@ -31,8 +31,9 @@ import PMCommandPage from './pages/PMCommandPage'
 import EnergyRatesPage from './pages/EnergyRatesPage'
 import HigherEdPage from './pages/HigherEdPage'
 import PensionPage from './pages/PensionPage'
+import CriminalJusticePage from './pages/CriminalJusticePage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'energy' | 'highered' | 'pension' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'energy' | 'highered' | 'pension' | 'cj' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -66,6 +67,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'energy',         label: 'Energy Rates',    icon: '⚡', description: 'CT electric & gas rates vs NE neighbors, PURA rate cases, bill affordability, grid stats, assistance programs' },
   { id: 'highered',       label: 'Higher Ed',       icon: '🎓', description: 'UConn & CSCU enrollment, research funding, completion equity, tuition comparison, CSCU IT portfolio' },
   { id: 'pension',        label: 'Pension',         icon: '📉', description: 'SERS/TRS funded status, unfunded liability, ARC payments, national comparison, SEBAC reform scorecard' },
+  { id: 'cj',             label: 'Criminal Justice', icon: '⚖️', description: 'DOC population, recidivism, racial disparity, facility capacity, IT systems, reform timeline' },
   { id: 'about',          label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -169,6 +171,7 @@ export default function App() {
         {activeTab === 'energy'         && <EnergyRatesPage />}
         {activeTab === 'highered'       && <HigherEdPage />}
         {activeTab === 'pension'        && <PensionPage />}
+        {activeTab === 'cj'             && <CriminalJusticePage />}
         {activeTab === 'about'          && <AboutPage />}
       </main>
 
