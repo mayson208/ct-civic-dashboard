@@ -29,8 +29,9 @@ import BusinessClimatePage from './pages/BusinessClimatePage'
 import VeteransPage from './pages/VeteransPage'
 import PMCommandPage from './pages/PMCommandPage'
 import EnergyRatesPage from './pages/EnergyRatesPage'
+import HigherEdPage from './pages/HigherEdPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'energy' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'energy' | 'highered' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -62,6 +63,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'veterans',       label: 'Veterans',        icon: '🎖', description: 'Veteran population, VA utilization, defense contractors, Electric Boat workforce, benefit programs' },
   { id: 'pmcmd',          label: 'PM Command',      icon: '🎯', description: 'IT portfolio RAG roll-up, risk escalation actions, grant burn rates, contract expiration countdown' },
   { id: 'energy',         label: 'Energy Rates',    icon: '⚡', description: 'CT electric & gas rates vs NE neighbors, PURA rate cases, bill affordability, grid stats, assistance programs' },
+  { id: 'highered',       label: 'Higher Ed',       icon: '🎓', description: 'UConn & CSCU enrollment, research funding, completion equity, tuition comparison, CSCU IT portfolio' },
   { id: 'about',          label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -163,6 +165,7 @@ export default function App() {
         {activeTab === 'veterans'       && <VeteransPage />}
         {activeTab === 'pmcmd'          && <PMCommandPage />}
         {activeTab === 'energy'         && <EnergyRatesPage />}
+        {activeTab === 'highered'       && <HigherEdPage />}
         {activeTab === 'about'          && <AboutPage />}
       </main>
 
