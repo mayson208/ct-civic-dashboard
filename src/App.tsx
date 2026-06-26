@@ -5,8 +5,12 @@ import SpendingPage from './pages/SpendingPage'
 import EducationPage from './pages/EducationPage'
 import PublicSafetyPage from './pages/PublicSafetyPage'
 import TownProfilesPage from './pages/TownProfilesPage'
+import PublicHealthPage from './pages/PublicHealthPage'
+import TownComparePage from './pages/TownComparePage'
+import ProjectTrackerPage from './pages/ProjectTrackerPage'
+import AboutPage from './pages/AboutPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -15,6 +19,10 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'education',   label: 'Education',       icon: '🎓',  description: 'Graduation rates by school district' },
   { id: 'safety',      label: 'Public Safety',   icon: '🚔',  description: 'Crash statistics by town & year' },
   { id: 'towns',       label: 'Town Profiles',   icon: '🗺️', description: 'Demographics, income & poverty by municipality' },
+  { id: 'health',      label: 'Public Health',   icon: '⚕️', description: 'COVID-19 trend, health indicators, hospital capacity' },
+  { id: 'compare',     label: 'Town Compare',    icon: '⚖️', description: 'Side-by-side comparison of any two CT towns' },
+  { id: 'projects',    label: 'IT Projects',     icon: '📋',  description: 'CT state IT project portfolio tracker' },
+  { id: 'about',       label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
 export default function App() {
@@ -81,6 +89,10 @@ export default function App() {
         {activeTab === 'education'  && <EducationPage />}
         {activeTab === 'safety'     && <PublicSafetyPage />}
         {activeTab === 'towns'      && <TownProfilesPage />}
+        {activeTab === 'health'     && <PublicHealthPage />}
+        {activeTab === 'compare'    && <TownComparePage />}
+        {activeTab === 'projects'   && <ProjectTrackerPage />}
+        {activeTab === 'about'      && <AboutPage />}
       </main>
 
       {/* Footer */}
