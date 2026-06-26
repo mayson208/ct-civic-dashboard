@@ -13,8 +13,9 @@ import EconomicPage from './pages/EconomicPage'
 import ExecutiveSummaryPage from './pages/ExecutiveSummaryPage'
 import HousingPage from './pages/HousingPage'
 import AlertsPage from './pages/AlertsPage'
+import FederalGrantsPage from './pages/FederalGrantsPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -30,6 +31,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'executive',   label: 'Exec Summary',    icon: '🖨',  description: 'Printable cross-domain executive briefing with recommendations' },
   { id: 'housing',     label: 'Housing',         icon: '🏘',  description: 'Home prices, permits, affordability, rental rates, and affordable stock' },
   { id: 'alerts',      label: 'Alerts',          icon: '🔔',  description: 'Automated threshold monitoring and governance alerts' },
+  { id: 'grants',      label: 'Federal Grants',  icon: '🏛',  description: 'ARPA · IIJA · IRA — $3.5B+ in federal awards, obligation and expenditure tracking' },
   { id: 'about',       label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -104,6 +106,7 @@ export default function App() {
         {activeTab === 'executive'  && <ExecutiveSummaryPage />}
         {activeTab === 'housing'    && <HousingPage />}
         {activeTab === 'alerts'     && <AlertsPage />}
+        {activeTab === 'grants'     && <FederalGrantsPage />}
         {activeTab === 'about'      && <AboutPage />}
       </main>
 
