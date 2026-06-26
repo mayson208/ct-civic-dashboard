@@ -1,5 +1,5 @@
 const TECH_STACK = [
-  { name: 'React 18',           role: 'UI framework — 18 self-contained page components',  color: 'bg-sky-100 text-sky-700 border-sky-200' },
+  { name: 'React 18',           role: 'UI framework — 22 self-contained page components',  color: 'bg-sky-100 text-sky-700 border-sky-200' },
   { name: 'TypeScript',         role: 'Type-safe development — 0 compiler errors',         color: 'bg-blue-100 text-blue-700 border-blue-200' },
   { name: 'Vite',               role: 'Build tooling & HMR',                               color: 'bg-purple-100 text-purple-700 border-purple-200' },
   { name: 'Tailwind CSS',       role: 'Utility-first styling with CT brand palette',       color: 'bg-cyan-100 text-cyan-700 border-cyan-200' },
@@ -50,7 +50,12 @@ const TABS_INDEX = [
   { tab: 'Federal Grants',   domains: 'ARPA/IIJA/IRA — 14 grants, $3.5B+, expenditure pace, at-risk flagging' },
   { tab: 'Risk Register',    domains: '5×5 PMBOK matrix — 8 IT program risks, mitigation + contingency plans' },
   { tab: 'Demographics',     domains: 'Population trend, migration, age/race, household composition, education attainment' },
-  { tab: 'Environment',      domains: 'GHG vs. pathway, clean energy mix, solar/EV adoption, CT Net Zero Act' },
+  { tab: 'Environment',      domains: 'GHG vs. pathway, clean energy mix, solar/EV adoption, CT Net Zero Act milestones' },
+  { tab: 'Broadband',        domains: 'FCC coverage by speed tier, BEAD timeline, underserved towns, adoption barriers' },
+  { tab: 'Workforce',        domains: 'WIOA credentials, sector partnerships, IT talent pipeline, skills gap, AJC performance' },
+  { tab: 'Procurement',      domains: '12 active IT contracts, vendor registry, spend trends, expiration monitoring, detail panel' },
+  { tab: 'Municipal',        domains: 'Mill rates, ECS grants, fund balance, income vs. mill rate scatter, MRSA distress' },
+  { tab: 'Cybersecurity',    domains: 'NIST CSF scores, Zero Trust pillars, incident trend, agency radar, NIST 800-53 compliance' },
 ]
 
 export default function AboutPage() {
@@ -62,7 +67,7 @@ export default function AboutPage() {
           <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-xl font-black text-ct-navy shadow-lg flex-shrink-0">CT</div>
           <div>
             <h1 className="text-2xl font-black">Connecticut Civic Dashboard</h1>
-            <p className="text-blue-200 text-sm mt-1">A full-stack government data analytics platform built for the State of Connecticut — 17 interactive pages, live Socrata API integration, and PM-ready governance tooling.</p>
+            <p className="text-blue-200 text-sm mt-1">A full-stack government data analytics platform built for the State of Connecticut — 22 interactive pages, live Socrata API integration, and PM-ready governance tooling.</p>
             <div className="flex gap-2 mt-3 flex-wrap">
               <a href="https://github.com/mayson208/ct-civic-dashboard" target="_blank" rel="noopener" className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-xs font-semibold transition">
                 ⭐ GitHub Repository
@@ -95,7 +100,7 @@ export default function AboutPage() {
       {/* Dashboard index */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="px-4 py-3 border-b border-slate-100">
-          <h2 className="text-base font-black text-slate-800">Dashboard Index — 17 Sections</h2>
+          <h2 className="text-base font-black text-slate-800">Dashboard Index — 22 Sections</h2>
           <p className="text-xs text-slate-500 mt-0.5">Each page is self-contained with its own data fetching, filter state, and chart set</p>
         </div>
         <div className="overflow-x-auto">
@@ -189,7 +194,7 @@ export default function AboutPage() {
             ['Data Layer', 'src/api/socrata.ts — typed Axios wrapper. Dataset IDs in DATASETS map; SODA $where/$order/$limit params forwarded from hooks. Typed row interfaces per dataset.'],
             ['Fallback Layer', 'src/api/mockData.ts — realistic CT figures for all 6 live datasets. fetchWithFallback<T> catches any API error and returns mock data silently. Zero blank-screen states.'],
             ['Query Layer', 'src/hooks/useSocrataData.ts — TanStack Query v5 hooks. staleTime: 1hr, retry: 1, refetchOnWindowFocus: false. Shared QueryClient in main.tsx.'],
-            ['Pages (17)', 'src/pages/ — each page is fully self-contained. Own useQuery call, own filter useState, own chart set. No global store (Zustand/Redux) needed — by design.'],
+            ['Pages (22)', 'src/pages/ — each page is fully self-contained. Own useQuery call, own filter useState, own chart set. No global store (Zustand/Redux) needed — by design.'],
             ['Shared UI', 'KPICard, SectionHeader, LoadingSpinner/ErrorCard — 3 shared components. Consistent visual language without over-engineering.'],
             ['Routing', 'Single-page app — tab state held in App.tsx useState<TabId>. No react-router (adds complexity with no UX benefit for a demo). Keyboard shortcuts via useEffect keydown listener.'],
           ].map(([label, text]) => (
