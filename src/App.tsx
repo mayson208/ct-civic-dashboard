@@ -9,8 +9,10 @@ import PublicHealthPage from './pages/PublicHealthPage'
 import TownComparePage from './pages/TownComparePage'
 import ProjectTrackerPage from './pages/ProjectTrackerPage'
 import AboutPage from './pages/AboutPage'
+import EconomicPage from './pages/EconomicPage'
+import ExecutiveSummaryPage from './pages/ExecutiveSummaryPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -22,6 +24,8 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'health',      label: 'Public Health',   icon: '⚕️', description: 'COVID-19 trend, health indicators, hospital capacity' },
   { id: 'compare',     label: 'Town Compare',    icon: '⚖️', description: 'Side-by-side comparison of any two CT towns' },
   { id: 'projects',    label: 'IT Projects',     icon: '📋',  description: 'CT state IT project portfolio tracker' },
+  { id: 'economy',     label: 'Economy',         icon: '💹',  description: 'GDP, employment by sector, business formation, county breakdown' },
+  { id: 'executive',   label: 'Exec Summary',    icon: '🖨',  description: 'Printable cross-domain executive briefing with recommendations' },
   { id: 'about',       label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -92,6 +96,8 @@ export default function App() {
         {activeTab === 'health'     && <PublicHealthPage />}
         {activeTab === 'compare'    && <TownComparePage />}
         {activeTab === 'projects'   && <ProjectTrackerPage />}
+        {activeTab === 'economy'    && <EconomicPage />}
+        {activeTab === 'executive'  && <ExecutiveSummaryPage />}
         {activeTab === 'about'      && <AboutPage />}
       </main>
 

@@ -9,3 +9,11 @@ body { margin: 0; background: #f1f5f9; font-family: 'Segoe UI', system-ui, sans-
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
 ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+
+@media print {
+  header, footer, nav, .print\:hidden { display: none !important; }
+  body { background: white; }
+  .bg-slate-100 { background: white !important; }
+  .shadow-sm, .shadow-lg { box-shadow: none !important; }
+  .rounded-xl, .rounded-2xl { border-radius: 0 !important; }
+}
