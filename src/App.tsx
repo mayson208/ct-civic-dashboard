@@ -33,8 +33,9 @@ import HigherEdPage from './pages/HigherEdPage'
 import PensionPage from './pages/PensionPage'
 import CriminalJusticePage from './pages/CriminalJusticePage'
 import BehavioralHealthPage from './pages/BehavioralHealthPage'
+import EarlyChildhoodPage from './pages/EarlyChildhoodPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'energy' | 'highered' | 'pension' | 'cj' | 'bh' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'energy' | 'highered' | 'pension' | 'cj' | 'bh' | 'earlychildhood' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -70,6 +71,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'pension',        label: 'Pension',         icon: '📉', description: 'SERS/TRS funded status, unfunded liability, ARC payments, national comparison, SEBAC reform scorecard' },
   { id: 'cj',             label: 'Criminal Justice', icon: '⚖️', description: 'DOC population, recidivism, racial disparity, facility capacity, IT systems, reform timeline' },
   { id: 'bh',             label: 'Behavioral Health', icon: '🧠', description: 'Opioid OD deaths, treatment capacity, naloxone, 988 Crisis Lifeline, county rates, DMHAS IT' },
+  { id: 'earlychildhood', label: 'Early Childhood',  icon: '👧', description: 'CT Pre-K enrollment, child care costs vs. subsidies, Care 4 Kids, NIEER quality, deserts, OEC IT' },
   { id: 'about',          label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -175,6 +177,7 @@ export default function App() {
         {activeTab === 'pension'        && <PensionPage />}
         {activeTab === 'cj'             && <CriminalJusticePage />}
         {activeTab === 'bh'             && <BehavioralHealthPage />}
+        {activeTab === 'earlychildhood' && <EarlyChildhoodPage />}
         {activeTab === 'about'          && <AboutPage />}
       </main>
 
