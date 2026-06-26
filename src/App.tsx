@@ -25,8 +25,9 @@ import CybersecurityPage from './pages/CybersecurityPage'
 import TransportationPage from './pages/TransportationPage'
 import JudicialPage from './pages/JudicialPage'
 import SocialServicesPage from './pages/SocialServicesPage'
+import BusinessClimatePage from './pages/BusinessClimatePage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -54,7 +55,8 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'transportation', label: 'Transportation', icon: '🚆', description: 'Transit ridership, road/bridge condition, FasTrak tolling, capital projects, Vision Zero safety' },
   { id: 'judicial',       label: 'Courts',         icon: '⚖️', description: 'Caseload by type, Tyler Odyssey e-filing adoption, processing time SLAs, district performance' },
   { id: 'social',         label: 'Social Services', icon: '🤝', description: 'HUSKY/Medicaid enrollment, SNAP, DCF child welfare caseload, program costs and federal match rates' },
-  { id: 'about',          label: 'About',          icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
+  { id: 'business',       label: 'Business',        icon: '🏢', description: 'Business formations, DECD incentives, sector employment, VC activity, top employers, NE competitiveness' },
+  { id: 'about',          label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
 export default function App() {
@@ -151,6 +153,7 @@ export default function App() {
         {activeTab === 'transportation' && <TransportationPage />}
         {activeTab === 'judicial'       && <JudicialPage />}
         {activeTab === 'social'         && <SocialServicesPage />}
+        {activeTab === 'business'       && <BusinessClimatePage />}
         {activeTab === 'about'          && <AboutPage />}
       </main>
 
