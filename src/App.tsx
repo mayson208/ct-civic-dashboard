@@ -27,8 +27,9 @@ import JudicialPage from './pages/JudicialPage'
 import SocialServicesPage from './pages/SocialServicesPage'
 import BusinessClimatePage from './pages/BusinessClimatePage'
 import VeteransPage from './pages/VeteransPage'
+import PMCommandPage from './pages/PMCommandPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'social' | 'business' | 'veterans' | 'pmcmd' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -58,6 +59,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'social',         label: 'Social Services', icon: '🤝', description: 'HUSKY/Medicaid enrollment, SNAP, DCF child welfare caseload, program costs and federal match rates' },
   { id: 'business',       label: 'Business',        icon: '🏢', description: 'Business formations, DECD incentives, sector employment, VC activity, top employers, NE competitiveness' },
   { id: 'veterans',       label: 'Veterans',        icon: '🎖', description: 'Veteran population, VA utilization, defense contractors, Electric Boat workforce, benefit programs' },
+  { id: 'pmcmd',          label: 'PM Command',      icon: '🎯', description: 'IT portfolio RAG roll-up, risk escalation actions, grant burn rates, contract expiration countdown' },
   { id: 'about',          label: 'About',           icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -157,6 +159,7 @@ export default function App() {
         {activeTab === 'social'         && <SocialServicesPage />}
         {activeTab === 'business'       && <BusinessClimatePage />}
         {activeTab === 'veterans'       && <VeteransPage />}
+        {activeTab === 'pmcmd'          && <PMCommandPage />}
         {activeTab === 'about'          && <AboutPage />}
       </main>
 
