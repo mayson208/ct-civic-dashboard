@@ -58,7 +58,7 @@ const SEBAC_MILESTONES = [
   { year: 2020, event: 'COVID-19 — Governor suspends pension smoothing, uses surplus for debt service', impact: 'AAL grows $1.2B' },
   { year: 2021, event: 'ARPA $1.58B — $900M used for pension pre-payment (one-time)', impact: 'SERS +4.8pt / TRS +2.4pt' },
   { year: 2022, event: 'CT Fiscal Guardrails implemented: spending cap + volatility cap on capital gains', impact: 'Enables pension paydown formula' },
-  { year: 2023', event: 'Gov. Lamont proposes extra $2B pension prepayment from surplus', impact: 'Saves est. $6B over 25 years' },
+  { year: 2023, event: 'Gov. Lamont proposes extra $2B pension prepayment from surplus', impact: 'Saves est. $6B over 25 years' },
   { year: 2024, event: 'Pension obligation bonds (POB) debate — AG opinion requested', impact: 'Decision pending' },
 ]
 
