@@ -16,8 +16,9 @@ import AlertsPage from './pages/AlertsPage'
 import FederalGrantsPage from './pages/FederalGrantsPage'
 import RiskRegisterPage from './pages/RiskRegisterPage'
 import DemographicsPage from './pages/DemographicsPage'
+import EnvironmentalPage from './pages/EnvironmentalPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -36,6 +37,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'grants',      label: 'Federal Grants',  icon: '🏛',  description: 'ARPA · IIJA · IRA — $3.5B+ in federal awards, obligation and expenditure tracking' },
   { id: 'risks',        label: 'Risk Register',   icon: '⚠️', description: 'IT program risk register — 5×5 matrix, mitigation plans, and contingencies' },
   { id: 'demographics', label: 'Demographics',   icon: '👥',  description: 'Population trends, age/race, migration, household composition, education attainment' },
+  { id: 'environment',  label: 'Environment',    icon: '🌿',  description: 'GHG emissions, clean energy mix, solar/EV adoption, air quality, Net Zero Act milestones' },
   { id: 'about',        label: 'About',          icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -124,6 +126,7 @@ export default function App() {
         {activeTab === 'grants'     && <FederalGrantsPage />}
         {activeTab === 'risks'        && <RiskRegisterPage />}
         {activeTab === 'demographics' && <DemographicsPage />}
+        {activeTab === 'environment'  && <EnvironmentalPage />}
         {activeTab === 'about'        && <AboutPage />}
       </main>
 
