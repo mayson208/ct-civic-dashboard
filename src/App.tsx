@@ -19,8 +19,9 @@ import DemographicsPage from './pages/DemographicsPage'
 import EnvironmentalPage from './pages/EnvironmentalPage'
 import BroadbandPage from './pages/BroadbandPage'
 import WorkforcePage from './pages/WorkforcePage'
+import ProcurementPage from './pages/ProcurementPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -41,7 +42,8 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'demographics', label: 'Demographics',   icon: '👥',  description: 'Population trends, age/race, migration, household composition, education attainment' },
   { id: 'environment',  label: 'Environment',    icon: '🌿',  description: 'GHG emissions, clean energy mix, solar/EV adoption, air quality, Net Zero Act milestones' },
   { id: 'broadband',   label: 'Broadband',      icon: '📡',  description: 'CT connectivity coverage, BEAD program timeline, underserved towns, adoption barriers' },
-  { id: 'workforce',   label: 'Workforce',      icon: '🔧',  description: 'WIOA programs, credential attainment, sector partnerships, IT talent pipeline, skills gap' },
+  { id: 'workforce',    label: 'Workforce',     icon: '🔧',  description: 'WIOA programs, credential attainment, sector partnerships, IT talent pipeline, skills gap' },
+  { id: 'procurement',  label: 'Procurement',   icon: '📑',  description: 'CT state IT vendor registry, active contracts, spend by category, expiration monitoring' },
   { id: 'about',        label: 'About',          icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -133,6 +135,7 @@ export default function App() {
         {activeTab === 'environment'  && <EnvironmentalPage />}
         {activeTab === 'broadband'   && <BroadbandPage />}
         {activeTab === 'workforce'   && <WorkforcePage />}
+        {activeTab === 'procurement' && <ProcurementPage />}
         {activeTab === 'about'        && <AboutPage />}
       </main>
 
