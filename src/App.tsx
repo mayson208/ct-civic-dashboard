@@ -23,8 +23,9 @@ import ProcurementPage from './pages/ProcurementPage'
 import MunicipalPage from './pages/MunicipalPage'
 import CybersecurityPage from './pages/CybersecurityPage'
 import TransportationPage from './pages/TransportationPage'
+import JudicialPage from './pages/JudicialPage'
 
-type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'about'
+type TabId = 'overview' | 'employment' | 'spending' | 'education' | 'safety' | 'towns' | 'health' | 'compare' | 'projects' | 'economy' | 'executive' | 'housing' | 'alerts' | 'grants' | 'risks' | 'demographics' | 'environment' | 'broadband' | 'workforce' | 'procurement' | 'municipal' | 'cybersecurity' | 'transportation' | 'judicial' | 'about'
 
 const TABS: { id: TabId; label: string; icon: string; description: string }[] = [
   { id: 'overview',    label: 'Overview',        icon: '🏛',  description: 'CT at a glance — key metrics across all domains' },
@@ -50,6 +51,7 @@ const TABS: { id: TabId; label: string; icon: string; description: string }[] = 
   { id: 'municipal',      label: 'Municipal',    icon: '🏛',  description: 'Mill rates, ECS grants, fund balance, debt service, and MRSA fiscal distress indicators' },
   { id: 'cybersecurity',  label: 'Cybersecurity',  icon: '🔐', description: 'NIST CSF scores, Zero Trust pillars, incident trend, vulnerability management, BEST compliance' },
   { id: 'transportation', label: 'Transportation', icon: '🚆', description: 'Transit ridership, road/bridge condition, FasTrak tolling, capital projects, Vision Zero safety' },
+  { id: 'judicial',       label: 'Courts',         icon: '⚖️', description: 'Caseload by type, Tyler Odyssey e-filing adoption, processing time SLAs, district performance' },
   { id: 'about',          label: 'About',          icon: 'ℹ️', description: 'Tech stack, data sources, and resume talking points' },
 ]
 
@@ -145,6 +147,7 @@ export default function App() {
         {activeTab === 'municipal'      && <MunicipalPage />}
         {activeTab === 'cybersecurity'  && <CybersecurityPage />}
         {activeTab === 'transportation' && <TransportationPage />}
+        {activeTab === 'judicial'       && <JudicialPage />}
         {activeTab === 'about'          && <AboutPage />}
       </main>
 
