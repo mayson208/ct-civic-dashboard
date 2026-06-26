@@ -1,5 +1,5 @@
 const TECH_STACK = [
-  { name: 'React 18',           role: 'UI framework — 28 self-contained page components',  color: 'bg-sky-100 text-sky-700 border-sky-200' },
+  { name: 'React 18',           role: 'UI framework — 34 self-contained page components',  color: 'bg-sky-100 text-sky-700 border-sky-200' },
   { name: 'TypeScript',         role: 'Type-safe development — 0 compiler errors',         color: 'bg-blue-100 text-blue-700 border-blue-200' },
   { name: 'Vite',               role: 'Build tooling & HMR',                               color: 'bg-purple-100 text-purple-700 border-purple-200' },
   { name: 'Tailwind CSS',       role: 'Utility-first styling with CT brand palette',       color: 'bg-cyan-100 text-cyan-700 border-cyan-200' },
@@ -20,7 +20,7 @@ const DATASETS = [
 
 const FEATURES = [
   { icon: '🔄', title: 'Live API + Graceful Fallback', desc: 'Queries data.ct.gov in real time. If a dataset is unavailable the app serves realistic cached data — dashboard always renders, zero blank screens.' },
-  { icon: '📊', title: '12+ Chart Types Across 28 Tabs', desc: 'Area, line, bar (vertical/horizontal, stacked), scatter, radar, pie, donut — each chosen to best communicate the underlying data pattern.' },
+  { icon: '📊', title: '12+ Chart Types Across 34 Tabs', desc: 'Area, line, bar (vertical/horizontal, stacked), scatter, radar, pie, donut — each chosen to best communicate the underlying data pattern.' },
   { icon: '⬇',  title: 'CSV Export on Every Data Page', desc: 'Every dataset downloadable as a CSV file directly from the dashboard — no portal login required, designed for analyst reuse.' },
   { icon: '📋', title: 'IT Project Portfolio Tracker', desc: 'Editable project board with budget burn, phase pipeline click-to-filter, risk flags, and inline editing — modeled on CT BEST/OPM governance.' },
   { icon: '⚠️', title: 'Governance Alert System', desc: 'Dynamic threshold monitoring evaluates live data against policy benchmarks in real time and surfaces dismissible action items per domain.' },
@@ -62,6 +62,12 @@ const TABS_INDEX = [
   { tab: 'Business',         domains: 'Business formations, DECD incentives, sector employment, VC activity, top employers, NE competitiveness' },
   { tab: 'Veterans',         domains: 'Veteran population, VA utilization, defense contractors, Electric Boat workforce, benefit programs' },
   { tab: 'PM Command',       domains: 'Portfolio RAG roll-up, health radar, risk escalation actions, grant burn rates, contract expiration countdown' },
+  { tab: 'Energy Rates',     domains: 'CT electric & gas rates vs. NE, PURA rate dockets, bill affordability by county, grid stats, assistance programs' },
+  { tab: 'Higher Ed',        domains: 'UConn & CSCU enrollment, research funding, completion equity by race, tuition comparison, CSCU IT modernization' },
+  { tab: 'Pension',          domains: 'SERS/TRS funded ratio, unfunded liability, ARC payments, Pew national comparison, SEBAC reform scorecard' },
+  { tab: 'Criminal Justice', domains: 'DOC population, recidivism, racial disparity, facility capacity, DOC IT systems, reform timeline 2015–2023' },
+  { tab: 'Behavioral Health', domains: 'Opioid OD deaths, treatment capacity/waitlist, naloxone, 988 Crisis Lifeline, county rates, DMHAS IT portfolio' },
+  { tab: 'Early Childhood',  domains: 'CT Pre-K enrollment, child care cost gap, Care 4 Kids subsidy, NIEER quality standards, child care deserts, OEC IT' },
 ]
 
 export default function AboutPage() {
@@ -73,7 +79,7 @@ export default function AboutPage() {
           <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-xl font-black text-ct-navy shadow-lg flex-shrink-0">CT</div>
           <div>
             <h1 className="text-2xl font-black">Connecticut Civic Dashboard</h1>
-            <p className="text-blue-200 text-sm mt-1">A full-stack government data analytics platform built for the State of Connecticut — 28 interactive pages, live Socrata API integration, and PM-ready governance tooling.</p>
+            <p className="text-blue-200 text-sm mt-1">A full-stack government data analytics platform built for the State of Connecticut — 34 interactive pages, live Socrata API integration, and PM-ready governance tooling.</p>
             <div className="flex gap-2 mt-3 flex-wrap">
               <a href="https://github.com/mayson208/ct-civic-dashboard" target="_blank" rel="noopener" className="inline-flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-xs font-semibold transition">
                 ⭐ GitHub Repository
@@ -106,7 +112,7 @@ export default function AboutPage() {
       {/* Dashboard index */}
       <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="px-4 py-3 border-b border-slate-100">
-          <h2 className="text-base font-black text-slate-800">Dashboard Index — 28 Sections</h2>
+          <h2 className="text-base font-black text-slate-800">Dashboard Index — 34 Sections</h2>
           <p className="text-xs text-slate-500 mt-0.5">Each page is self-contained with its own data fetching, filter state, and chart set</p>
         </div>
         <div className="overflow-x-auto">
@@ -200,7 +206,7 @@ export default function AboutPage() {
             ['Data Layer', 'src/api/socrata.ts — typed Axios wrapper. Dataset IDs in DATASETS map; SODA $where/$order/$limit params forwarded from hooks. Typed row interfaces per dataset.'],
             ['Fallback Layer', 'src/api/mockData.ts — realistic CT figures for all 6 live datasets. fetchWithFallback<T> catches any API error and returns mock data silently. Zero blank-screen states.'],
             ['Query Layer', 'src/hooks/useSocrataData.ts — TanStack Query v5 hooks. staleTime: 1hr, retry: 1, refetchOnWindowFocus: false. Shared QueryClient in main.tsx.'],
-            ['Pages (28)', 'src/pages/ — each page is fully self-contained. Own useQuery call, own filter useState, own chart set. No global store (Zustand/Redux) needed — by design.'],
+            ['Pages (34)', 'src/pages/ — each page is fully self-contained. Own useQuery call, own filter useState, own chart set. No global store (Zustand/Redux) needed — by design.'],
             ['Shared UI', 'KPICard, SectionHeader, LoadingSpinner/ErrorCard — 3 shared components. Consistent visual language without over-engineering.'],
             ['Routing', 'Single-page app — tab state held in App.tsx useState<TabId>. No react-router (adds complexity with no UX benefit for a demo). Keyboard shortcuts via useEffect keydown listener.'],
           ].map(([label, text]) => (
@@ -218,7 +224,7 @@ export default function AboutPage() {
         <p className="text-xs text-ct-blue mb-3">Copy-paste ready for your CT state IT PM application</p>
         <ul className="space-y-3 text-sm text-ct-navy">
           {[
-            'Built a 28-section civic analytics dashboard integrating 6 live datasets from the CT Socrata Open Data API (data.ct.gov), covering labor, budget, education, public health, public safety, housing, demographics, environment, transportation, judicial, social services, business climate, veterans & defense, and economic indicators — demonstrating full-stack technical competency and domain familiarity with CT government data infrastructure.',
+            'Built a 34-section civic analytics dashboard integrating 6 live datasets from the CT Socrata Open Data API (data.ct.gov), covering labor, budget, education, public health, criminal justice, behavioral health, early childhood, pension & fiscal sustainability, higher education, energy rates, transportation, judicial, social services, business climate, veterans & defense, and more — demonstrating full-stack technical competency and comprehensive CT government domain knowledge.',
             'Designed and implemented a PMBOK-aligned IT Program Risk Register with a 5×5 probability-impact matrix, clickable risk detail panel, and mitigation/contingency plans for 8 active CT state IT programs (DMV, CTDOL, DCF, CT.gov, Zero Trust, BEAD, Courts e-Filing, Data Lake) — directly reflecting the governance work of a state IT PM.',
             'Built a Federal Grants Tracking module (ARPA/IIJA/IRA — 14 grants, $3.5B+) with expenditure pace visualization, deadline proximity flagging, and at-risk identification — the kind of compliance tracking tool that CT OPM and BEST require from program managers overseeing federal-fund projects.',
             'Developed a Governance Alert System that evaluates live CT open data against configurable thresholds in real time (unemployment watchlist, graduation rate triggers, Vision Zero fatality monitoring) and surfaces dismissible, action-oriented alerts per domain — modeling production-ready monitoring design.',
